@@ -6,3 +6,16 @@ body {
 a:hover {
     color:black;
 }
+
+div {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.1stclass {
+    color:gold;
+    font-weight:bold;
+}
