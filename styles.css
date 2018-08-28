@@ -27,8 +27,16 @@ ul{
     font-family: Comic Sans MS;
 }
 
+.dark{
+    padding:15px;
+    background:#ad0202;
+    color:#ffffff;
+    margin-top:10px;
+    margin-bottom:10px;
+}
 
-/* Header **/
+
+/* Header */
 header{
     background:#000000;
     color:#ffffff;
@@ -77,7 +85,7 @@ header a:hover{
     font-weight:bold;
 }
 
-/* Showcase ***/
+/* Showcase */
 
 #showcase{
     min-height:400px;
@@ -96,7 +104,7 @@ header a:hover{
     font-size:20px; 
 }
 
-/* Newsletter ****/
+/* Newsletter */
 
 #newsletter {
     padding:35px;
@@ -119,7 +127,7 @@ header a:hover{
     width:250px;
 }
 
-/* Boxes *****/
+/* Boxes */
 
 #boxes{
     margin-top:20px;
@@ -137,8 +145,43 @@ header a:hover{
     height:100px;
 }
 
+/* Sidebar */
+
+aside#sidebar{
+    float:right;
+    width:30%;
+    margin-top:10px;
+}
+aside#sidebar .quote input, aside#sidebar .quote textarea{
+    width:90%;
+    padding:10px;
+}
 
 
+/* Main Column */
+
+article#main-col{
+    float:left;
+    width:60%;
+}
+
+/* Services */
+
+ul#services li{
+    list-style: none;
+    padding:20px;
+    border:#4a4580 solid 5px; 
+    margin-bottom: 10px;
+    background:#b58642;
+}
+
+footer{
+    padding:20px;
+    margin-top:20px;
+    color:#ffffff;
+    background-color:#000000;
+    text-align:center;
+}
 
 
 
