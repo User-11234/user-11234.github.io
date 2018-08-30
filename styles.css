@@ -90,9 +90,10 @@ header a:hover{
 
 #showcase{
     min-height:400px;
-    background:url('./imgs/newshowcase.jpg') no-repeat 0 0;
+    background:url('./imgs/newshowcase.jpg') no-repeat -40px -300px;
     text-align:center;
-    color:#1fffff;
+    color:#8c0404;
+    text-shadow:#fa8072 -5px 2px;
 }
 
 #showcase h1{
@@ -103,6 +104,10 @@ header a:hover{
 
 #showcase p{
     font-size:20px; 
+}
+
+#showcase .highlight{
+    font-weight:bold;
 }
 
 /* Newsletter */
