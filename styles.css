@@ -35,6 +35,15 @@ ul{
     margin-bottom:10px;
 }
 
+a{
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration: line-through;
+    color:#2600bf;
+}
+
 
 /* Header */
 header{
@@ -237,5 +246,12 @@ footer{
  
  #gallery img{
      height:400px;
-     
+ }
+ 
+ #gallery .first{
+     float:left;
+ }
+ 
+ #gallery .second{
+     float:right;
  }
