@@ -202,6 +202,15 @@ footer{
     text-align:center;
 }
 
+/* Gallery */
+article#pics{
+    float:left;
+}
+
+article#pics img{
+    height:500px;
+}
+
 /* Media Queries */
 
 @media(max-width: 768px){
@@ -213,6 +222,7 @@ footer{
     #boxes .boxes,
     #gallery .pics
     article#main-col,
+    article#pics
     aside#sidebar{
         float:none;
         text-align:center;
@@ -239,16 +249,3 @@ footer{
     
 }
  
- /* Gallery */
- 
- #gallery{
-    margin-top:20px;
-}
-
-#gallery .pics{
-    float:left;
-    text-align:center;
-    width:30%;
-    padding:10px;
-    height:500px;
-}
