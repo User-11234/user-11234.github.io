@@ -240,18 +240,22 @@ footer{
  
  /* Gallery */
  
- #gallery ul{
-     padding-top:10px;
- }
+ #gallery{
+    margin-top:20px;
+}
+
+#gallery .boxes{
+    float:left;
+    text-align:center;
+    width:30%;
+    padding:10px;
+}
+
+#gallery .boxes img{
+    width:90px;
+    height:100px;
+}
+
+#gallery .boxes h3{
+    text-decoration:none;
  
- #gallery img{
-     height:400px;
- }
- 
- #gallery .first{
-     float:left;
- }
- 
- #gallery .second{
-     float:right;
- }
