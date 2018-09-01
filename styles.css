@@ -211,6 +211,7 @@ footer{
     #newsletter h1,
     #newsletter form
     #boxes .boxes,
+    #gallery .pics
     article#main-col,
     aside#sidebar{
         float:none;
@@ -244,15 +245,10 @@ footer{
     margin-top:20px;
 }
 
-#gallery .boxes{
+#gallery .pics{
     float:left;
     text-align:center;
     width:30%;
     padding:10px;
-}
-
-#gallery .boxes img{
     height:500px;
 }
-
- 
