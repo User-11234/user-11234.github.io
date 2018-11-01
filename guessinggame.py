@@ -30,3 +30,5 @@ while (gameLose == False):
     print ("This is not within the range.")
 
   lives = (lives - 1)
+  
+input()
