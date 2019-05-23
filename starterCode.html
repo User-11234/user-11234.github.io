@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Processing Demo</title>
+<script type="text/javascript" src="processingFile.js"></script>
+</head>
+<body>
+
+
+<script type="text/processing">
+float ballPosX = 15;
+float ballPosY = 15;
+float ballSpeedX = 5;
+float ballSpeedY = 5;
+float gravity = .5;
+
+void setup(){
+  size(800,800);
+}
+
+void draw(){
+  background(0);
+  circle(ballPosX, ballPosY, 30);
+  movement();
+  collision();
+}
+
+void movement(){
+  ballPosX += ballSpeedX;
+  ballPosY += ballSpeedY;
+}
+
+void collision(){
+   if(ballPosX >= 785){
+   ballSpeedX = ballSpeedX*(-1);
+   fill(random(0,255),random(0,255),random(0,255));
+  } 
+  if(ballPosY >= 785){
+    ballSpeedY = ballSpeedY*(-1);
+    fill(random(0,255),random(0,255),random(0,255));
+  } 
+  if(ballPosX <= 15){
+    ballSpeedX = ballSpeedX*(-1);
+    fill(random(0,255),random(0,255),random(0,255));
+  }
+  if(ballPosY <= 15){
+    ballSpeedY = ballSpeedY*(-1);
+    fill(random(0,255),random(0,255),random(0,255));
+  } else{
+    ballSpeedY += gravity;
+  }
+}
+
+</script>
+
+<canvas id="sketch" style="border: 1px solid black;"></canvas>
+</body>
+</html>
