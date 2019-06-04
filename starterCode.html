@@ -1,58 +1,113 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Processing Demo</title>
-<script type="text/javascript" src="processingFile.js"></script>
+<title>wooh</title>
+<script type="text/javascript" src="Processing/processingFile.js"></script>
 </head>
+
 <body>
-
-
 <script type="text/processing">
-float ballPosX = 15;
-float ballPosY = 15;
-float ballSpeedX = 5;
-float ballSpeedY = 5;
-float gravity = .5;
 
+/**This is by Julian Hoque
+
+  *Most of this is from Mr Thoe.
+  
+  */
+
+//Images
+PImage background;
+PImage flap;
+PImage flap2;
+PImage obstacle;
+PImage title;
+
+//Game variables
+int x;
+int bX = width/4;
+float bY = height/2;
+int y = 100;
+float vY;
+int gameState;
+
+float obsX = 300;
+float obsY = random(600); 
+
+//Images
 void setup(){
-  size(800,800);
+  size(600,600);
+  background = loadImage("./img/backImg.png");
+  flap = loadImage("./img/tHotGarbage.png");
+  flap2 = loadImage("./img/tHotGarbage2.png");
+  obstacle = loadImage("./img/mrClean2.png");
+  title = loadImage("./img/titleScreen.png");
 }
 
+//Game loop
 void draw(){
-  background(0);
-  circle(ballPosX, ballPosY, 30);
-  movement();
-  collision();
+  if(gameState == 0){
+    
+    //Background images
+    image(background, x, 0);
+    image(background, x + background.width, 0);
+    x--;
+    if(x< -background.width){
+      x = 0;
+    }
+    
+    //Player model
+    image(flap, bX, bY);
+    bY += vY;
+    vY+= 1;
+    accelerate();
+    checkPos();
+    }
+    
+    image(obstacle,obsX, obsY);
+    obsX--;
+    if(obsX < 0){ 
+      image(obstacle,obsX + width, obsY);
+    }
+  
+  //The parameters for side collisions
+    if(gameState != 0){
+      image(title, 0, 0);
+      fill(255); //COLOR OF TEXT
+      textSize(40); //SIZE OF TEXT
+      rect(170,500, 230, 45, 10);
+      fill(0);
+      text("Retry?", 230, 540); //TEXT ON BUTTON
+    } 
+    if(mousePressed){
+      gameState = 0;
+    
+    //END BUTTON
+    }
 }
 
-void movement(){
-  ballPosX += ballSpeedX;
-  ballPosY += ballSpeedY;
+void accelerate(){
+  if(mousePressed){
+    image(flap2, bX, bY);
+    vY = -10;
+  }
 }
 
-void collision(){
-   if(ballPosX >= 785){
-   ballSpeedX = ballSpeedX*(-1);
-   fill(random(0,255),random(0,255),random(0,255));
-  } 
-  if(ballPosY >= 785){
-    ballSpeedY = ballSpeedY*(-1);
-    fill(random(0,255),random(0,255),random(0,255));
-  } 
-  if(ballPosX <= 15){
-    ballSpeedX = ballSpeedX*(-1);
-    fill(random(0,255),random(0,255),random(0,255));
+void checkPos(){
+  if(bY < 0){
+    gameState = 1;
   }
-  if(ballPosY <= 15){
-    ballSpeedY = ballSpeedY*(-1);
-    fill(random(0,255),random(0,255),random(0,255));
-  } else{
-    ballSpeedY += gravity;
+  if(bY > height){
+    gameState = 1;
   }
+  if((bY == abs(obsY - 10)) && (bX == abs(obsX - 10))){
+    gameState = 1;
+  }
+  
 }
+
+
+
 
 </script>
-
 <canvas id="sketch" style="border: 1px solid black;"></canvas>
 </body>
 </html>
